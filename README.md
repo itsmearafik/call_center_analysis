@@ -1,6 +1,6 @@
 # Phonenow Telecom  Call Center Trends
 <!-- telecome call center image -->
-![]()
+!['Telecom Call Center'](https://github.com/itsmearafik/call_center_analysis/blob/main/images/telecom_call_center.jpeg)
 
 ## Background
 
@@ -76,8 +76,8 @@ With the data now cleaned, it’s time to explore the data and visualize Agents 
 `Average Handle Time(AHT) = FORMAT( CALCULATE( AVERAGE(PhoneNow_Call_Center[AvgTalkDuration]), PhoneNow_Call_Center[Answered (Y/N)] = "Yes"), "HH:mm:ss")`
 
 The measures were then used with relevant records in the dataset to visualize the metrics as shown below:
-<!-- metrics -->
-![]()
+
+!['Data Measures'](https://github.com/itsmearafik/call_center_analysis/blob/main/images/metrics.png)
 
 From the above visual, a total of 4,054 calls were answered, with each Agent handling over 450 calls. It also shows that agents take about 1 minute 7 seconds to respond to calls from the customers and spend over 3 minutes in handling the request/issues from them. Based on domain knowledge, I see the long wait time before a call is responded to, i.e., Speed of answer, being likely responsible for Agents long talk duration (AHT), as customer may end up already irritated at the delay, and time will be spent to first pacify the customer before attending to the call reason.
 
@@ -89,8 +89,7 @@ Moving on, we will now assess how PhoneNow customers rate the telecom’s servic
 
 Finally, we will now see how satisfied customers are with the services they received. To get the Average Customer Satisfaction rating, a DAX measure was created and CSAT Target Set to 4.5, as shown below:
 
-<!-- distribution -->
-![]()
+!['Call Centre Data Distribution'](https://github.com/itsmearafik/call_center_analysis/blob/main/images/distribuition.png)
 
 `Average Customer Satisfaction (CSAT) = CALCULATE( AVERAGE(PhoneNow_Call_Center[Satisfaction rating]),PhoneNow_Call_Center[Satisfaction rating] <> 0)`
 
@@ -101,14 +100,14 @@ The visual above, shows the satisfaction rating of 3.40, which is below the targ
 Dashboard:
 Having identified & visualized the agents’ and customers’ behaviours, the dashboard shown below was then designed, to bring our visuals into a single page view for the Call Center Manager as requested.
 
-<!-- dashboard -->
-![]()
-
+!['Call Center Dashboard'](https://github.com/itsmearafik/call_center_analysis/blob/main/images/dashboard.png)
+Find Dashbord [here](https://github.com/itsmearafik/call_center_analysis/blob/main/calcenter_dashboard.pbix)
 
 ## Conclusion
 
 ---
 
 Insights and recommendation were not requested at this time, hence I designed an interactive Dashboard to provide flexibility for the Call Center Manager, to enable him query varying metrics and be empowered to present the findings to the management team for discourse and further actions where required.
+
 
 Thank you.
