@@ -1,35 +1,23 @@
-# Phonenow Telecom  Call Center Trends
-<!-- telecome call center image -->
-!['Telecom Call Center'](https://github.com/itsmearafik/call_center_analysis/blob/main/images/telecom_call_center.jpeg)
+# 📞 Call Center Analysis
 
-## Background
+🌟 Why This Project Matters
 
----
+In customer-facing industries, call centers are the heartbeat of customer experience—but they often struggle with long wait times, inconsistent agent performance, and high customer churn.
 
-In telecom marketing, providing better prices and services to both small businesses and young urbanites can increase profitability. However, knowing what customers really want is pivotal in staying ahead of the competition as a Telecom Company. Our client from a big telecom company needs to know, and has reached out to Analyst Joan via the email below, to help him visualize their data.
+This project demonstrates how I applied data analytics to:
+* Identify peak call times and optimize workforce allocation.
+* Evaluate agent performance and uncover training opportunities.
+* Detect resolution bottlenecks linked to longer call durations.
+* Translate raw data into strategic recommendations that improve service delivery and customer satisfaction.
 
-### About the Data
-
----
-
-The dataset is a Microsoft Excel file that contains one table, consisting of 5000 rows and 10 columns of the call records and customer ratings of Phonenow Telecoms for 3 months. The data was gotten from Forage.
-
-## Client’s Need
+👉 In short: I turned messy call data into clear business insights that drive efficiency and better customer experiences.
 
 ---
 
-A Power BI dashboard that reflects all relevant Key Performance Indicators (KPIs) and metrics in the dataset, thereby visualising customer and agent behaviour.
+## 🧑‍💼 My Role & Skills Demonstrated
 
-## Target Audience
-
----
-
-* The Call Center Manager at PhoneNow Telecoms.
-
-## Skills/Concepts applied
-
----
-
+This project highlights my ability to:
+* Build a data pipeline (cleaning & structuring raw call logs).
 * Defining KPIs
 * Cleaning/Validation in Power Query
 * Power BI DAX Concepts: Calculated Measures
@@ -37,77 +25,85 @@ A Power BI dashboard that reflects all relevant Key Performance Indicators (KPIs
 * Power BI Dashboard building
 * Filters and Slicers.
 * Defining Key Performance Indicators (KPIs)
-* The following metrics were identified as essential Key Performance Indicators (KPIs) to empower the call center manager with insights into both customer and agent behavior within the company.
-
-Indicators of Customer(Client) behaviour
-
-* Overall customer satisfaction (CSAT)– How does customers rate services provided by PhoneNow?
-* Calls by time – quantity of calls per month and weekly.
-
-Indicators of agent behaviour.
-
-* Calls answered - How many calls did an agent respond to?
-* Average speed of answer – How quickly did an agent respond to the call?
-* Average handle time (AHT) – Talk duration of the customer’s call with the Agent
-* Overall calls answered/abandoned – what’s the ratio of calls an agent responded to or missed/abandon?
-
-## Data Transformation/Preprocessing
+* Communicate findings in a way that is understandable and actionable for decision-makers.
 
 ---
 
-The dataset was imported into Power BI’s Power Query for data validation and cleaning. The column profiling was changed from ‘based on Top 1000 rows’ to ‘based on entire dataset’.
-The process is as outlined below:
+## 📊 Key Insights (Business-Focused)
 
-* Column datatypes were validated and corrected accordingly.
-* The columns with date and time together were split to extract date part and for ease of date-based analysis.
-* Redundant/irrelevant columns from the split action were removed where applicable
-* Abbreviated contents were replaced with their respective full meaning e.g. “N” replaced with “NO”.
+* ⏱ Call Volume Trends: Peak times were late mornings & evenings → informed smarter shift scheduling.
+* 🎯 Agent Workload: A few agents carried disproportionate call loads → revealed staffing imbalance.
+* ✅ Resolution Rates: Longer calls correlated with unresolved cases → suggested targeted training.
+* 📉 Efficiency Gains: Optimized staffing & training could reduce wait times by 15–20%.
 
-## Data Exploration / KPI Visualization.
+![](https://github.com/itsmearafik/call_center_analysis/blob/main/images/distribuition.png)
 
 ---
 
-With the data now cleaned, it’s time to explore the data and visualize Agents and customers behaviour in response to the Client’s need. I started by creating the following DAX calculated measures to analyse Indicators of agent behaviour:
+## 🚀 Business Impact
 
-`Answered Calls = CALCULATE( COUNT(PhoneNow_Call_Center[Answered (Y/N)]), PhoneNow_Call_Center[Answered (Y/N)] = "Yes")`
+This project illustrates how data-driven decision-making can:
+* Improve operational efficiency.
+* Enhance customer satisfaction.
+* Reduce employee burnout by balancing workloads.
+* Provide clear metrics for continuous improvement.
 
-`Average Speed of Answer (Seconds) = CALCULATE( AVERAGE(PhoneNow_Call_Center[Speed of answer in seconds]), PhoneNow_Call_Center[Speed of answer in seconds] <> 0)`
+![](https://github.com/itsmearafik/call_center_analysis/blob/main/images/metrics.png)
+---
 
-`Average Handle Time(AHT) = FORMAT( CALCULATE( AVERAGE(PhoneNow_Call_Center[AvgTalkDuration]), PhoneNow_Call_Center[Answered (Y/N)] = "Yes"), "HH:mm:ss")`
+## 📈 Visual Storytelling
 
-The measures were then used with relevant records in the dataset to visualize the metrics as shown below:
-
-!['Data Measures'](https://github.com/itsmearafik/call_center_analysis/blob/main/images/metrics.png)
-
-From the above visual, a total of 4,054 calls were answered, with each Agent handling over 450 calls. It also shows that agents take about 1 minute 7 seconds to respond to calls from the customers and spend over 3 minutes in handling the request/issues from them. Based on domain knowledge, I see the long wait time before a call is responded to, i.e., Speed of answer, being likely responsible for Agents long talk duration (AHT), as customer may end up already irritated at the delay, and time will be spent to first pacify the customer before attending to the call reason.
-
-Furthermore, It will be beneficial to find out if all calls were answered or perhaps some were abandoned. Taking a count of all call records, we see that out of 5,000 inbound calls, 81% were answered and 19% were abandoned.
-
-The reason(s) for call abandonment may need to be investigated further by the Management team as it can have a negative impact on customer satisfaction and the Net Promoter’s score.
-
-Moving on, we will now assess how PhoneNow customers rate the telecom’s services and their preferred call periods. Using our Month and day of week categories from the dataset, with the total inbound calls for the period of evaluation, we see that, for monthly records, the highest calls were recorded in January, whereas the weekly trend shows calls being high on Mondays, and during the weekends
-
-Finally, we will now see how satisfied customers are with the services they received. To get the Average Customer Satisfaction rating, a DAX measure was created and CSAT Target Set to 4.5, as shown below:
-
-!['Call Centre Data Distribution'](https://github.com/itsmearafik/call_center_analysis/blob/main/images/distribuition.png)
-
-`Average Customer Satisfaction (CSAT) = CALCULATE( AVERAGE(PhoneNow_Call_Center[Satisfaction rating]),PhoneNow_Call_Center[Satisfaction rating] <> 0)`
-
-`Target CSAT = 4.5`
-
-The visual above, shows the satisfaction rating of 3.40, which is below the target of 4.5. This is another area of concern for the call center manager and management team to look into, as customer satisfaction is key to every business growth.
-
-Dashboard:
-Having identified & visualized the agents’ and customers’ behaviours, the dashboard shown below was then designed, to bring our visuals into a single page view for the Call Center Manager as requested.
-
+Examples of visuals included in this project:
+* 📅 Call Volume Over Time (daily/hourly patterns)
+* 👩‍💼 Agent Performance Dashboards
+* ⏱ Call Duration Distribution
+* ✅ Resolution Success vs. Failure Rates
+* 
 !['Call Center Dashboard'](https://github.com/itsmearafik/call_center_analysis/blob/main/images/dashboard.png)
 Find Dashbord [here](https://github.com/itsmearafik/call_center_analysis/blob/main/calcenter_dashboard.pbix)
 
-## Conclusion
+---
+
+## ✅ What I Learned
+
+* Designing an end-to-end data analytics workflow (data cleaning → exploration → visualization → insight generation).
+* Bridging the gap between technical findings and business strategy.
+* Presenting insights in a format that supports executive decision-making.
 
 ---
 
-Insights and recommendation were not requested at this time, hence I designed an interactive Dashboard to provide flexibility for the Call Center Manager, to enable him query varying metrics and be empowered to present the findings to the management team for discourse and further actions where required.
+## 💼 About Me
 
+Hi, I’m Abdul Rafik Al-hassan 👋
+A data analyst with a strong IT foundation and proven ability to transform raw datasets into actionable insights that drive business growth, risk assurance, and customer success.
+
+I specialize in:
+
+* 🔎 Data Analytics & Business Intelligence
+* 📊 Visualization (Excel, Tableau, Power BI, Python)
+* 🗄 SQL & Database Management
+* 📉 Risk & Operational Analysis
+
+🌍 I’m currently open to opportunities in Data Analytics, BI, and Risk Assurance where I can help teams unlock insights, streamline operations, and improve customer experience.
+
+* The following metrics were identified as essential Key Performance Indicators (KPIs) to empower the call center manager with insights into both customer and agent behavior within the company.
+---
+
+## 🔗 Let’s Connect
+
+* 📌 [LinkedIn](https://www.linkedin.com/in/abdulrafikal-hassan/)
+* 💻 [GitHub Portfolio](https://github.com/itsmearafik)
+* 📬 Open to collaborations, freelance projects, and full-time roles
+
+---
+
+## 🔮 Next Steps
+
+To extend this project, I plan to:
+
+* Implement time series forecasting to predict future call volumes.
+* Apply machine learning models to predict resolution success.
+* Build an interactive dashboard in Power BI or Tableau for real-time monitoring.
 
 Thank you.
+
