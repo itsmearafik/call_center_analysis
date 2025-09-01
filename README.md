@@ -2,7 +2,7 @@
 
 🌟 Why This Project Matters
 
-In customer-facing industries, call centers are the heartbeat of customer experience—but they often struggle with long wait times, inconsistent agent performance, and high customer churn.
+In customer-facing industries, call centers are the heartbeat of customer experience but they often struggle with long wait times, inconsistent agent performance, and high customer churn.
 
 This project demonstrates how I applied data analytics to:
 * Identify peak call times and optimize workforce allocation.
@@ -106,4 +106,5 @@ To extend this project, I plan to:
 * Build an interactive dashboard in Power BI or Tableau for real-time monitoring.
 
 Thank you.
+
 
